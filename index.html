@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LuGyi Apk - ရုပ်ရှင်၊ ဘောလုံးပွဲ နှင့် လူကြီးကားများကို အခမဲ့ကြည့်ရှုလိုက်ပါ။">
+    <title>LuGyi Apk - Download Free</title>
+    
+    <!-- Google Font for Myanmar Text (Padauk) -->
+    <link href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #FFD700; /* Gold Color */
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
+            --accent-red: #ef4444;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Padauk', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 600px; /* Mobile First Design */
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 50px 20px 40px;
+            background: linear-gradient(180deg, rgba(30,41,59,1) 0%, rgba(15,23,42,1) 100%);
+            border-bottom: 1px solid #334155;
+            margin-bottom: 30px;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            background: #000;
+            border-radius: 28px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+            border: 2px solid var(--primary);
+            overflow: hidden;
+        }
+        
+        .app-icon img { width: 100%; height: 100%; object-fit: cover; }
+
+        h1 {
+            margin: 10px 0 5px;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.1);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8em;
+            color: var(--primary);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        /* --- Download Button --- */
+        .download-box { margin: 30px 0; }
+
+        .download-btn {
+            background: var(--primary);
+            color: #000;
+            text-decoration: none;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 215, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+        }
+
+        .download-btn:active { transform: scale(0.95); }
+
+        .meta-info {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: var(--text-gray);
+        }
+
+        /* --- Features Grid --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .f-card {
+            background: var(--bg-card);
+            padding: 15px 5px;
+            border-radius: 16px;
+            border: 1px solid #334155;
+        }
+
+        .f-icon { font-size: 28px; margin-bottom: 8px; display: block; }
+        .f-text { font-size: 0.85em; font-weight: bold; }
+
+        /* --- Description --- */
+        .desc-box {
+            background: rgba(255,255,255,0.03);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .desc-box h3 { color: var(--primary); margin-top: 0; }
+        .desc-box p { color: #cbd5e1; margin-bottom: 20px; }
+
+        .adult-warning {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--accent-red);
+            color: #fca5a5;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* --- Screenshots --- */
+        .screenshots {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding-bottom: 20px;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .screenshots::-webkit-scrollbar { display: none; }
+
+        .screen-img {
+            min-width: 160px;
+            height: 280px;
+            background: #333;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            border: 2px solid #334155;
+            object-fit: cover;
+        }
+
+        /* --- Footer --- */
+        .tg-btn {
+            display: block;
+            background: #229ED9;
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 12px;
+            margin-top: 20px;
+            font-weight: bold;
+            border: 1px solid #229ED9;
+        }
+        
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            font-size: 0.8em;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="container" style="padding:0;">
+            <div class="app-icon">
+                <!-- Logo မရှိရင် အီမိုဂျီပေါ်မယ် -->
+                🦍
+            </div>
+            
+            <h1>LuGyi Apk</h1>
+            
+            <div class="badges">
+                <span class="badge">Version 1.2</span>
+                <span class="badge">Free</span>
+                <span class="badge">No Ads</span>
+            </div>
+
+            <p style="color:#94a3b8; margin-bottom:0;">
+                ရုပ်ရှင်၊ ဘောလုံးပွဲ နဲ့ လူကြီးကားများကို အခမဲ့ကြည့်လိုက်ပါ
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <!-- Download Section -->
+        <div class="download-box">
+            <!-- 👇 APK Link ကို ဒီနေရာမှာ ပြင်ထည့်ပါ 👇 -->
+            <a href="https://lugyi-poster.deno.dev/apk/lugyi_v1.apk" class="download-btn">
+                <i class="fa-solid fa-download"></i>
+                Download APK
+            </a>
+            <div class="meta-info">
+                File Size: 15 MB • Android 5.0+
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features-grid">
+            <div class="f-card">
+                <span class="f-icon" style="color:#60a5fa">🎬</span>
+                <span class="f-text">Movies/Series</span>
+            </div>
+            <div class="f-card">
+                <span class="f-icon" style="color:#4ade80">⚽</span>
+                <span class="f-text">Live Sports</span>
+            </div>
+            <div class="f-card">
+                <span class="f-icon" style="color:#f87171">🔞</span>
+                <span class="f-text">18+ Zone</span>
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="desc-box">
+            <h3>📌 App အကြောင်း</h3>
+            <p>
+                LuGyi Apk သည် မြန်မာစာတန်းထိုး နိုင်ငံခြားရုပ်ရှင်များ၊ ဇာတ်လမ်းတွဲများအပြင် တိုက်ရိုက်ဘောလုံးပွဲစဉ်များကို အခမဲ့ ကြည့်ရှုနိုင်သော Application ဖြစ်သည်။
+            </p>
+            
+            <div class="adult-warning">
+                <i class="fa-solid fa-triangle-exclamation" style="font-size:20px;"></i>
+                <div>
+                    <strong>18+ Only</strong><br>
+                    VIP ကားများအတွက် သီးသန့်ကဏ္ဍ ပါဝင်သည်။ (Password မလိုပါ)
+                </div>
+            </div>
+        </div>
+
+        <!-- Screenshots Area -->
+        <h3 style="text-align:left; color:#fff; margin-bottom:15px;">📸 ဓာတ်ပုံများ</h3>
+        <div class="screenshots">
+            <!-- Screenshot ပုံထည့်ချင်ရင် အောက်က div တွေထဲမှာ img tag သုံးပါ -->
+            <div class="screen-img">Home</div>
+            <div class="screen-img">Player</div>
+            <div class="screen-img">Category</div>
+        </div>
+
+        <!-- Telegram Button -->
+        <a href="https://t.me/your_channel_link" target="_blank" class="tg-btn">
+            <i class="fa-brands fa-telegram"></i> Join Telegram Channel
+        </a>
+
+        <footer>
+            &copy; 2025 LuGyi App. Made for Myanmar.
+        </footer>
+
+    </div>
+
+</body>
+</html>
+
+
