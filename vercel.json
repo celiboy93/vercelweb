@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/download",
+      "destination": "https://github.com/Liar2003/lugyi-site/releases/download/v1.6.0/app-release.apk",
+      "permanent": false
+    },
+    {
+      "source": "/apk",
+      "destination": "https://github.com/Liar2003/lugyi-site/releases/download/v1.6.0/app-release.apk",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ]
+}
+
