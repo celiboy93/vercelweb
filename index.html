@@ -24,6 +24,8 @@
             --primary: #6C63FF;
             --primary-dark: #5A52D5;
             --accent: #FF6584;
+            --gold: #FFD700;
+            --gold-dark: #D4AF37;
             --bg-dark: #0A0A0F;
             --bg-card: rgba(255, 255, 255, 0.04);
             --bg-glass: rgba(255, 255, 255, 0.06);
@@ -346,6 +348,77 @@
 
         .vip-card.popular:hover {
             box-shadow: 0 16px 50px rgba(255, 101, 132, 0.2);
+        }
+
+        /* === LIFETIME VIP CARD (ရာသက်ပန်) === */
+        .vip-card.lifetime {
+            border: 1px solid var(--gold);
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.12), rgba(212, 175, 55, 0.05));
+            grid-column: 1 / -1;
+            overflow: hidden;
+        }
+
+        .vip-card.lifetime::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(120deg, transparent 30%, rgba(255, 215, 0, 0.15) 50%, transparent 70%);
+            animation: shine 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-60%) translateY(-60%) rotate(0deg); }
+            100% { transform: translateX(60%) translateY(60%) rotate(0deg); }
+        }
+
+        .vip-card.lifetime:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 50px rgba(255, 215, 0, 0.25);
+            border-color: var(--gold);
+        }
+
+        .vip-card.lifetime .vip-duration {
+            color: var(--gold);
+        }
+
+        .vip-card.lifetime .vip-price {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.2rem;
+        }
+
+        .vip-card.lifetime .vip-price .currency {
+            -webkit-text-fill-color: var(--text-secondary);
+        }
+
+        .vip-card.lifetime .btn-buy {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: #1A1A24;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .lifetime-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: #1A1A24;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            padding: 5px 16px;
+            border-radius: 50px;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            z-index: 2;
         }
 
         .popular-badge {
@@ -743,6 +816,10 @@
                 font-size: 1.4rem;
             }
 
+            .vip-card.lifetime .vip-price {
+                font-size: 1.8rem;
+            }
+
             .payment-grid {
                 grid-template-columns: 1fr;
             }
@@ -869,6 +946,15 @@
                     <div class="vip-desc">ရက် ၃၆၅ ကြည့်ခွင့်</div>
                     <button class="btn-buy" onclick="openModal(this)">Buy Now</button>
                 </div>
+
+                <!-- Lifetime VIP (ရာသက်ပန်) -->
+                <div class="vip-card lifetime" data-duration="lifetime" data-price="5,000">
+                    <span class="lifetime-badge">👑 BEST VALUE • ရာသက်ပန်</span>
+                    <div class="vip-duration">Lifetime VIP</div>
+                    <div class="vip-price">5,000 <span class="currency">Ks</span></div>
+                    <div class="vip-desc">တစ်သက်လုံး အကန့်အသတ်မရှိ ကြည့်ခွင့်</div>
+                    <button class="btn-buy" onclick="openModal(this)">Buy Now</button>
+                </div>
             </div>
 
             <div class="vip-contact">
@@ -959,7 +1045,8 @@
             "3months": "၃ လ ဝယ်ယူသူဆိုရင် Movie အစုံနဲ့ တိုက်ရိုက်ဘောပွဲများကို ရက် ၉၀ ကြည့်ခွင့် ရရှိမည်။",
             "5months": "၅ လ ဝယ်ယူသူဆိုရင် Movie အစုံနဲ့ တိုက်ရိုက်ဘောပွဲများကို ရက် ၁၅၀ ကြည့်ခွင့် ရရှိမည်။",
             "8months": "၈ လ ဝယ်ယူသူဆိုရင် Movie အစုံနဲ့ တိုက်ရိုက်ဘောပွဲများကို ရက် ၂၄၀ ကြည့်ခွင့် ရရှိမည်။",
-            "1year": "၁ နှစ် ဝယ်ယူသူဆိုရင် Movie အစုံနဲ့ တိုက်ရိုက်ဘောပွဲများကို ရက် ၃၆၅ ကြည့်ခွင့် ရရှိမည်။"
+            "1year": "၁ နှစ် ဝယ်ယူသူဆိုရင် Movie အစုံနဲ့ တိုက်ရိုက်ဘောပွဲများကို ရက် ၃၆၅ ကြည့်ခွင့် ရရှိမည်။",
+            "lifetime": "ရာသက်ပန် (Lifetime) VIP KEY ဝယ်ယူသူဆိုရင် Movie အစုံနဲ့ တိုက်ရိုက်ဘောပွဲများကို တစ်သက်လုံး အကန့်အသတ်မရှိ အမြဲတမ်း ကြည့်ခွင့် ရရှိမည်။"
         };
 
         // Modal
@@ -967,7 +1054,13 @@
             const card = btn.closest('.vip-card');
             const duration = card.dataset.duration;
             const price = card.dataset.price;
-            document.getElementById('modalPlan').textContent = duration.replace('months', ' Months').replace('month', ' Month').replace('year', ' Year');
+            let planLabel;
+            if (duration === 'lifetime') {
+                planLabel = 'Lifetime (ရာသက်ပန်)';
+            } else {
+                planLabel = duration.replace('months', ' Months').replace('month', ' Month').replace('year', ' Year');
+            }
+            document.getElementById('modalPlan').textContent = planLabel;
             document.getElementById('modalPrice').textContent = price + ' Ks';
             document.getElementById('modalDescription').textContent = planDescriptions[duration] || '';
             document.getElementById('buyModal').classList.add('active');
